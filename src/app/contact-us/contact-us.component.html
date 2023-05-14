@@ -1,0 +1,83 @@
+
+<body>
+    <section class="contact">
+        <div class="content">
+            <img src="https://thumbs.dreamstime.com/b/contact-us-web-button-icon-isolated-white-background-editable-vector-illustration-contact-us-151481935.jpg" class="center">
+            <h2></h2>
+        </div>
+        <div class="container">
+            <div class="contactInfo">
+                <div class="box"> 
+                    <div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>  
+                    <div class="text">
+                        <h3>Address</h3>
+                        <p>578/42 Bank Road,<br>Mangalagiri,Guntur,<br>522503</p>
+                    </div>                 
+                </div>
+                <div class="box"> 
+                    <div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>  
+                    <div class="text">
+                        <h3>Phone</h3>
+                        <p>7841524781</p>
+                    </div>                 
+                </div>
+                <div class="box"> 
+                    <div class="icon"><i class="fa fa-envelope-o" aria-hidden="true"></i>
+                    </div>  
+                    <div class="text">
+                        <h3>Email</h3>
+                        <p>claimqueries@gmail.com</p>
+                    </div>                 
+                </div>
+            </div>
+            <div class="contactForm">
+                <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+                    <input type="hidden" name="Id" [value]="objService.ppData.Id">
+                    
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-white">
+                                <i class="fa fa-user-circle-o" aria-hidden="true" [class.green-icon]="FullName.valid"
+                                    [class.red-icon]="FullName.invalid && FullName.touched"></i>
+                                <input name="FullName" #FullName="ngModel" [(ngModel)]="objService.ppData.FullName"
+                                    placeholder="Full Name" class="form-control" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div clas="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-white">
+                                <i class="fa fa-envelope" aria-hidden="true" [class.green-icon]="Email.valid" [class.red-icon]="Email.invalid && Email.touched"></i>
+                                <input name="Email" #Email="ngModel" [(ngModel)]="objService.ppData.Email" placeholder="Email" class="form-control" required maxlength="20" minlength="10">    
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+
+              
+                
+                <div clas="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-white">
+                                <i class="fa fa-comment" aria-hidden="true" [class.green-icon]="Message.valid"
+                                [class.red-icon]="Message.invalid && Message.touched"></i>
+                                <input name="Message" #Message="ngModel"   [(ngModel)]="objService.ppData.Message" placeholder="Message" class="form-control" required maxlength="200" minlength="10">    
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-success btn-lg" type="submit" >
+                        <i class="fa fa-send-o"></i> Send
+                    </button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>

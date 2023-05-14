@@ -1,0 +1,36 @@
+
+    
+    <table class="table table-hover">
+        <thead class="thead-primary">
+            <tr>
+               <th>UserId</th> 
+                <th>UserName</th>  
+                <th>Age</th>
+                <th>EmailId</th>
+                <th>Address</th>
+                <th>MobileNumber</th> 
+                <th>State</th>
+                <th>Country</th>
+                <th>PinCode</th>
+                <th>NoOfClaims</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of objSrv.ppList">
+                <td (click)="fillForm(p)">{{p.UserId}}</td>
+                <td (click)="fillForm(p)">{{p.UserName}}</td>
+                <td (click)="fillForm(p)">{{p.Age}}</td>
+                <td (click)="fillForm(p)">{{p.EmailId}}</td>
+                <td (click)="fillForm(p)">{{p.Address}}</td>
+                <td (click)="fillForm(p)">{{p.MobileNumber}}</td>
+                <td (click)="fillForm(p)">{{p.State}}</td>
+                <td (click)="fillForm(p)">{{p.Country}}</td>
+                <td (click)="fillForm(p)">{{p.PinCode}}</td>
+                <td (click)="fillForm(p)">{{p.NoOfClaims}}</td>
+                <td><i class="fa fa-trash" (click)="del(p.UserId)"></i></td> 
+    
+            </tr>
+        </tbody>
+        
+    </table>
+     

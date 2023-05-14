@@ -1,0 +1,379 @@
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<body>
+    
+  <div class="testbox">
+    <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+         
+      <div class="banner">
+        <h1>Insurance Claim Application Form</h1>
+      </div>
+      <p>Please fill out with the information that is requested below and submit the insurance application form. Thank you!</p>
+      <hr/>
+      <fieldset style="border-radius: 1px; font-size: 30px;">
+        <legend>User Information</legend>
+        <div class="item" >
+          <label for="UserId">User Id<span>*</span></label>
+           
+            <i class="fa fa-user-circle-o" aria-hidden="true" [class.green-icon]="UserId.valid" [class.red-icon]="UserId.invalid && UserId.touched"></i>
+            <input type="number" name="UserId" #UserId="ngModel" [(ngModel)]="cusServ.ppData.UserId" placeholder="User Id" class="form-control" required>
+          
+        </div>
+        <br>
+        <div class="item" >
+          <label for="UserName">Name<span>*</span></label>
+           
+            <i class="fa fa-user-circle-o" aria-hidden="true" [class.green-icon]="UserName.valid" [class.red-icon]="UserName.invalid && UserName.touched"></i>
+            <input name="UserName" #UserName="ngModel" [(ngModel)]="cusServ.ppData.UserName" placeholder="User Name" class="form-control" required>
+          
+        </div>
+         <br>
+        <div class="item">
+        <label for="Age">Age<span>*</span></label>
+        <i class="fa fa-user-circle-o" aria-hidden="true" [class.green-icon]="Age.valid"
+            [class.red-icon]="Age.invalid && Age.touched"></i>
+            <input type = "number" name="Age" #Age="ngModel" [(ngModel)]="cusServ.ppData.Age" placeholder="Contact" class="form-control">
+       </div>
+       <br>
+       <div class="item">
+        <label for="emailId">Email Id<span>*</span></label>
+        <i class="fa fa-user-circle-o" aria-hidden="true" [class.green-icon]="EmailId.valid"
+            [class.red-icon]="EmailId.invalid && EmailId.touched"></i>
+            <input name="emailId" #EmailId="ngModel"   [(ngModel)]="cusServ.ppData.EmailId" placeholder="Email" class="form-control" required>
+       </div>
+       <br>
+       <div class="item">
+        <label for="Address">Address<span>*</span></label>
+        <i class="fa fa-user-circle-o" aria-hidden="true" [class.green-icon]="Address.valid"
+            [class.red-icon]="Address.invalid && Address.touched"></i>
+            <input name="Address" #Address="ngModel"   [(ngModel)]="cusServ.ppData.Address" placeholder="Address" class="form-control" required>
+       </div>
+       <br>
+       <div class="item">
+        <label for="MobileNumber">Mobile No<span>*</span></label>
+        <i class="fa fa-check-circle-o" aria-hidden="true" [class.green-icon]="MobileNumber.valid"
+            [class.red-icon]="MobileNumber.invalid && MobileNumber.touched"></i>
+            <input name="MobileNumber" #MobileNumber="ngModel"   [(ngModel)]="cusServ.ppData.MobileNumber" placeholder="Mobile No" class="form-control" required>
+       </div>
+       <br>
+
+       <div class="item">
+         
+          <div>
+            <label for="State">State<span>*</span></label>
+            <i class="fa fa-check-circle-o" aria-hidden="true" [class.green-icon]="State.valid"
+            [class.red-icon]="State.invalid && State.touched"></i>
+            <select name="State" #State="ngModel" [(ngModel)]="cusServ.ppData.State" placeholder="State" class="form-control">
+              <option value="" selected="selected" disabled="disabled">--Select State--</option>
+              <option value="Andhra Pradesh">Andhra Pradesh</option>
+              <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+              <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+              <option value="Assam">Assam</option>
+              <option value="Bihar">Bihar</option>
+              <option value="Chandigarh">Chandigarh</option>
+              <option value="Chhattisgarh">Chhattisgarh</option>
+              <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+              <option value="Daman and Diu">Daman and Diu</option>
+              <option value="Delhi">Delhi</option>
+              <option value="Lakshadweep">Lakshadweep</option>
+              <option value="Puducherry">Puducherry</option>
+              <option value="Goa">Goa</option>
+              <option value="Gujarat">Gujarat</option>
+              <option value="Haryana">Haryana</option>
+              <option value="Himachal Pradesh">Himachal Pradesh</option>
+              <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+              <option value="Jharkhand">Jharkhand</option>
+              <option value="Karnataka">Karnataka</option>
+              <option value="Kerala">Kerala</option>
+              <option value="Madhya Pradesh">Madhya Pradesh</option>
+              <option value="Maharashtra">Maharashtra</option>
+              <option value="Manipur">Manipur</option>
+              <option value="Meghalaya">Meghalaya</option>
+              <option value="Mizoram">Mizoram</option>
+              <option value="Nagaland">Nagaland</option>
+              <option value="Odisha">Odisha</option>
+              <option value="Punjab">Punjab</option>
+              <option value="Rajasthan">Rajasthan</option>
+              <option value="Sikkim">Sikkim</option>
+              <option value="Tamil Nadu">Tamil Nadu</option>
+              <option value="Telangana">Telangana</option>
+              <option value="Tripura">Tripura</option>
+              <option value="Uttar Pradesh">Uttar Pradesh</option>
+              <option value="Uttarakhand">Uttarakhand</option>
+              <option value="West Bengal">West Bengal</option>
+              </select>
+           
+        </div>
+        <br>
+        <div class="item">
+           
+            <div>
+              <label for="Country">Country<span>*</span></label>
+              <i class="fa fa-check-circle-o" aria-hidden="true" [class.green-icon]="Country.valid"
+                  [class.red-icon]="Country.invalid && Country.touched"></i>
+              <input name="Country" #Country="ngModel" [(ngModel)]="cusServ.ppData.Country" placeholder="Country" class="form-control">
+            </div>
+           
+        </div>
+        <br>
+        <div class="item">
+           
+            <div>
+              <label for="PinCode">Pin Code<span>*</span></label>
+              <i class="fa fa-check-circle-o" aria-hidden="true" [class.green-icon]="PinCode.valid"
+                  [class.red-icon]="PinCode.invalid && PinCode.touched"></i>
+              <input name="PinCode" #PinCode="ngModel" [(ngModel)]="cusServ.ppData.PinCode" placeholder="PinCode" class="form-control">
+            </div>
+          
+        </div>
+        <br>
+        <div class="item">
+           
+            <div>
+              <label for="NoOfClaims">No Of Claims<span>*</span></label>
+              <input name="NoOfClaims" #NoOfClaims="ngModel" [(ngModel)]="cusServ.ppData.NoOfClaims" placeholder="No Of Claims" class="form-control">
+            </div>
+           
+        </div>
+       </div>
+    </fieldset>
+    <br>
+    <div class="btn-block">
+      <button class="btn btn-primary btn-lg" type="submit">
+        <i class="fa fa fa-database"></i>Save and Continue
+    </button>
+  </div>
+  <br>
+  </form>
+    </div>
+      <br>
+      <div class="testbox">
+        <form #form="ngForm" autocomplete="off" (submit)="onSubmitProperty(form)">
+        <fieldset>
+        <legend>Vehicle Information</legend>
+        <br>
+        <div class="item">
+          <label for="VehicleNo">Vehicle No<span>*</span></label>
+          <i class="fa fa-money" aria-hidden="true" [class.green-icon]="VehicleNo.valid" [class.red-icon]="VehicleNo.invalid && VehicleNo.touched"></i>
+          <input type="number" name="VehicleNo" #VehicleNo="ngModel"[(ngModel)]="propSrv.ppData.VehicleNo" placeholder="Vehicle No" class="form-control" required>
+          </div>
+          <br>
+        <div class="item">
+        <label for="VehicleName">Vehicle Name<span>*</span></label>
+        <i class="fa fa-money" aria-hidden="true" [class.green-icon]="VehicleName.valid" [class.red-icon]="VehicleName.invalid && VehicleName.touched"></i>
+        <input name="VehicleName" #VehicleName="ngModel"[(ngModel)]="propSrv.ppData.VehicleName" placeholder="Vehicle Name" class="form-control" required>
+        </div>
+        <br>
+        <div class="item">
+          <label for="VehicleType">Vehicle Type <span>*</span></label>
+          <i class="fa fa-money" aria-hidden="true" [class.green-icon]="VehicleType.valid" [class.red-icon]="VehicleType.invalid && VehicleType.touched"></i>
+          <input name="VehicleType" #VehicleType="ngModel"[(ngModel)]="propSrv.ppData.VehicleType" placeholder="Vehicle Type" class="form-control" required>
+          </div>
+        <br>
+        <div class="item">
+        <label for="Vehicle Model Maker">Vehicle Model Maker<span>*</span></label>
+        <i class="fa fa-calendar-alt" aria-hidden="true" [class.green-icon]="VehicleModelMaker.valid" [class.red-icon]="VehicleModelMaker.invalid && VehicleModelMaker.touched"></i>
+        <input name="VehicleModelMaker" #VehicleModelMaker ="ngModel"[(ngModel)]="propSrv.ppData.VehicleModelMaker" placeholder="Vehicle Model Maker" class="form-control" required>
+        </div>
+        <br>
+        <div class="item">
+          <label for="GrossVehicleWeight">Gross Vehicle Weight <span>*</span></label>
+          <i class="fa fa-calendar-alt" aria-hidden="true" [class.green-icon]="GrossVehicleWeight.valid" [class.red-icon]="GrossVehicleWeight.invalid && GrossVehicleWeight.touched"></i>
+          <input name="#GrossVehicleWeight " #GrossVehicleWeight ="ngModel"[(ngModel)]="propSrv.ppData.GrossVehicleWeight" placeholder="Gross Vehicle Weight " class="form-control" required>
+          </div>
+        <br>
+        <div class="item">
+          <label for="VehiclePower">Vehicle Power <span>*</span></label>
+          <i class="fa fa-calendar-alt" aria-hidden="true" [class.green-icon]="VehiclePower.valid" [class.red-icon]="VehiclePower.invalid && VehiclePower.touched"></i>
+          <input name="#VehiclePower " #VehiclePower ="ngModel"[(ngModel)]="propSrv.ppData.VehiclePower" placeholder="Vehicle Power " class="form-control" required>
+          </div>
+        <br>
+        <div class="item">
+          <label for="VehicleCapacity">Vehicle Capacity <span>*</span></label>
+          <i class="fa fa-calendar-alt" aria-hidden="true" [class.green-icon]="VehicleCapacity.valid" [class.red-icon]="VehicleCapacity.invalid && VehicleCapacity.touched"></i>
+          <input name="#VehicleCapacity" #VehicleCapacity ="ngModel"[(ngModel)]="propSrv.ppData.VehicleCapacity" placeholder="Vehicle Capacity" class="form-control" required>
+          </div>
+        <br>
+        <div class="item">
+          <label for="VehicleLength">Vehicle Length  <span>*</span></label>
+          <i class="fa fa-calendar-alt" aria-hidden="true" [class.green-icon]="VehicleLength.valid" [class.red-icon]="VehicleLength.invalid && VehicleLength.touched"></i>
+          <input name="#VehicleLength " #VehicleLength ="ngModel"[(ngModel)]="propSrv.ppData.VehicleLength" placeholder="Vehicle Length" class="form-control" required>
+          </div>
+        <br>
+        <div class="item">
+          <label for="VehicleOwner">VehicleOwner <span>*</span></label>
+          <i class="fa fa-calendar-alt" aria-hidden="true" [class.green-icon]="VehicleOwner.valid" [class.red-icon]="VehicleOwner.invalid && VehicleOwner.touched"></i>
+          <input name="#VehicleOwner " #VehicleOwner ="ngModel"[(ngModel)]="propSrv.ppData.VehicleOwner" placeholder="Vehicle Owner " class="form-control" required>
+          </div>
+        <br> 
+        <div class="item">
+          <label for="VehicleEngineNo">Vehicle Engine No<span>*</span></label>
+          <i class="fa fa-calendar-alt" aria-hidden="true" [class.green-icon]="VehicleEngineNo.valid" [class.red-icon]="VehicleEngineNo.invalid && VehicleEngineNo.touched"></i>
+          <input name="#VehicleEngineNo" #VehicleEngineNo ="ngModel"[(ngModel)]="propSrv.ppData.VehicleEngineNo" placeholder="Vehicle Engine No" class="form-control" required>
+          </div>
+        <br>
+        <div class="item">
+          <label for="FuelType">FuelType <span>*</span></label>
+          <i class="fa fa-calendar-alt" aria-hidden="true" [class.green-icon]="FuelType.valid" [class.red-icon]="FuelType.invalid && FuelType.touched"></i>
+          <input name="#FuelType " #FuelType ="ngModel"[(ngModel)]="propSrv.ppData.FuelType" placeholder="Fuel Type" class="form-control" required>
+          </div>
+        <br>
+        <div class="item">
+          <label for="VehicleCompany">Vehicle Company <span>*</span></label>
+          <i class="fa fa-calendar-alt" aria-hidden="true" [class.green-icon]="VehicleCompany.valid" [class.red-icon]="VehicleCompany.invalid && VehicleCompany.touched"></i>
+          <input name="#VehicleCompany" #VehicleCompany ="ngModel"[(ngModel)]="propSrv.ppData.VehicleCompany" placeholder="Vehicle Company" class="form-control" required>
+          </div>
+        <br>
+        <div class="item">
+          <label for="OwnerId">OwnerId  <span>*</span></label>
+          <i class="fa fa-calendar-alt" aria-hidden="true" [class.green-icon]="OwnerId.valid" [class.red-icon]="OwnerId.invalid && OwnerId.touched"></i>
+          <input type="number" name="#OwnerId " #OwnerId ="ngModel" [(ngModel)]="propSrv.ppData.OwnerId" placeholder="Owner Id" class="form-control" required>
+          </div>
+        <br>
+      </fieldset>
+      <div class="btn-block">
+        <button class="btn btn-primary btn-lg" type="submit">
+          <i class="fa fa-check-circle-o"></i>Save and Continue
+        </button>
+      </div>
+      </form>  
+     
+    </div>
+    <br>
+    <div class="textbox">
+      
+    <form #form="ngForm" autocomplete="off" (submit)="onSubmitLegal(form)">
+        
+    <fieldset>
+      <legend>Policy Details</legend>
+    <br>
+    <div class="item">
+      <label for="PolicyId">Policy Id<span>*</span></label>
+      <i class="fa fa-money-bill" aria-hidden="true" [class.green-icon]="PolicyId.valid" [class.red-icon]="PolicyId.invalid && PolicyId.touched"></i>
+      <input type="number" name="PolicyId" #PolicyId="ngModel" [(ngModel)]="objLegal.ppData.PolicyId" placeholder="Policy Id" class="form-control" required>
+      </div>
+    <br>
+    <div class="item">
+      <label for="VehicleId">Vehicle Id<span>*</span></label>
+      <i class="fa fa-money-bill" aria-hidden="true" [class.green-icon]="VehicleId.valid" [class.red-icon]="VehicleId.invalid && VehicleId.touched"></i>
+      <input type="number" name="VehicleId" #VehicleId="ngModel" [(ngModel)]="objLegal.ppData.VehicleId" placeholder="Vehicle Id" class="form-control" required>
+      </div>
+    <br>
+    <div class="item">
+      <label for="PolicyName">Policy Name<span>*</span></label>
+      <i class="fa fa-money-bill" aria-hidden="true" [class.green-icon]="PolicyName.valid" [class.red-icon]="PolicyName.invalid && PolicyName.touched"></i>
+      <input name="PolicyName" #PolicyName="ngModel" [(ngModel)]="objLegal.ppData.PolicyName" placeholder="Policy Name" class="form-control" required>
+      </div>
+    <br>
+    <div class="item">
+      <label for="EffectiveDate">Effective Date<span>*</span></label>
+      <i class="fa fa-money-bill" aria-hidden="true" [class.green-icon]="EffectiveDate.valid" [class.red-icon]="EffectiveDate.invalid && EffectiveDate.touched"></i>
+      <input type="date" name="EffectiveDate" #EffectiveDate="ngModel" [(ngModel)]="objLegal.ppData.EffectiveDate" placeholder="Effective Date" class="form-control" required>
+      </div>
+    <br>
+    <div class="item">
+      <label for="ExpiryDate">Expiry Date<span>*</span></label>
+      <i class="fa fa-money-bill" aria-hidden="true" [class.green-icon]="ExpiryDate.valid" [class.red-icon]="ExpiryDate.invalid && ExpiryDate.touched"></i>
+      <input type="date" name="ExpiryDate" #ExpiryDate="ngModel" [(ngModel)]="objLegal.ppData.ExpiryDate" placeholder="Expiry Date" class="form-control" required>
+      </div>
+      <br>
+    <div class="item">
+      <label for="CompanyId">Company Id<span>*</span></label>
+      <i class="fa fa-money-bill" aria-hidden="true" [class.green-icon]="CompanyId.valid" [class.red-icon]="CompanyId.invalid && CompanyId.touched"></i>
+      <input type="number" name="CompanyId" #CompanyId="ngModel" [(ngModel)]="objLegal.ppData.CompanyId" placeholder="Company Id" class="form-control" required>
+      </div>
+
+      <br>
+    </fieldset>
+    <div class="btn-block">
+      <button class="btn btn-primary btn-lg" type="submit">
+        <i class="fa fa-send"></i>Create
+      </button>
+    </div>
+    </form>  
+    </div>
+
+    <div class="textbox">
+      <form #form="ngForm" autocomplete="off" (submit)="onSubmitClaim(form)">
+        
+<fieldset>
+
+  <legend>Claim Information</legend>
+<br>
+<div class="item">
+  <label for="ClaimId">Claim Id<span>*</span></label>
+  <i class="fa fa-money-bill" aria-hidden="true" [class.green-icon]="ClaimId.valid" [class.red-icon]="ClaimId.invalid && ClaimId.touched"></i>
+  <input type="number" name="ClaimId" #ClaimId="ngModel" [(ngModel)]="objClaim.ppData.ClaimId" placeholder="Claim Id" class="form-control" required>
+  </div>
+<br>
+<div class="item">
+  <label for="PolicyId">Policy Id<span>*</span></label>
+  <i class="fa fa-money-bill" aria-hidden="true" [class.green-icon]="PolicyId.valid" [class.red-icon]="PolicyId.invalid && PolicyId.touched"></i>
+  <input type="number" name="PolicyId" #PolicyId="ngModel" [(ngModel)]="objClaim.ppData.PolicyId" placeholder="Policy Id" class="form-control" required>
+  </div>
+<br>
+<div class="item">
+  <label for="VehicleBill">Vehicle Bill <span>*</span></label>
+  <i class="fa fa-money-bill" aria-hidden="true" [class.green-icon]="VehicleBill.valid" [class.red-icon]="VehicleBill.invalid && VehicleBill.touched"></i>
+  <input name="VehicleBill" #VehicleBill="ngModel"[(ngModel)]="objClaim.ppData.VehicleBill" placeholder="Vehicle Bill" class="form-control" required>
+  </div>
+  <br>
+  <div class="item">
+    <label for="DriverLicenceNo">Driver Licence No<span>*</span></label>
+    <i class="fa fa-money-bill" aria-hidden="true" [class.green-icon]="DriverLicenceNo.valid" [class.red-icon]="DriverLicenceNo.invalid && DriverLicenceNo.touched"></i>
+    <input name="DriverLicenceNo" #DriverLicenceNo="ngModel"[(ngModel)]="objClaim.ppData.DriverLicenceNo" placeholder="Driver Licence No" class="form-control" required>
+    </div>
+<br>
+<div class="item">
+  <label for="VehicleCondition">VehicleCondition<span>*</span></label>
+  <i class="fa fa-money-bill" aria-hidden="true" [class.green-icon]="VehicleCondition.valid" [class.red-icon]="VehicleCondition.invalid && VehicleCondition.touched"></i>
+  <input name="VehicleCondition" #VehicleCondition="ngModel"[(ngModel)]="objClaim.ppData.VehicleCondition" placeholder="Vehicle Condition" class="form-control" required>
+  </div>
+<br>
+
+  <input type="hidden" name="ClaimStatus" [value]="objClaim.ppData.ClaimStatus">
+ 
+<br>
+<div class="item">
+  <label for="BankName">Bank Name<span>*</span></label>
+  <i class="fa fa-money-bill" aria-hidden="true" [class.green-icon]="BankName.valid" [class.red-icon]="BankName.invalid && BankName.touched"></i>
+  <input name="BankName" #BankName="ngModel"[(ngModel)]="objClaim.ppData.BankName" placeholder="Bank Name" class="form-control" required>
+  </div>
+<br>
+<div class="item">
+  <label for="BankBranch">Bank Branch<span>*</span></label>
+  <i class="fa fa-money-bill" aria-hidden="true" [class.green-icon]="BankBranch.valid" [class.red-icon]="BankBranch.invalid && BankBranch.touched"></i>
+  <input name="BankBranch" #BankBranch="ngModel"[(ngModel)]="objClaim.ppData.BankBranch" placeholder="Bank Branch" class="form-control" required>
+  </div>
+<br>
+<div class="item">
+  <label for="BankIfscCode">Bank Ifsc Code<span>*</span></label>
+  <i class="fa fa-money-bill" aria-hidden="true" [class.green-icon]="BankIfscCode.valid" [class.red-icon]="BankIfscCode.invalid && BankIfscCode.touched"></i>
+  <input name="BankIfscCode" #BankIfscCode="ngModel"[(ngModel)]="objClaim.ppData.BankIfscCode" placeholder="Bank Ifsc Code" class="form-control" required>
+  </div>
+<br>
+<div class="item">
+  <label for="BankAccountNo">Bank Account No<span>*</span></label>
+  <i class="fa fa-money-bill" aria-hidden="true" [class.green-icon]="BankAccountNo.valid" [class.red-icon]="BankAccountNo.invalid && BankAccountNo.touched"></i>
+  <input name="BankAccountNo" #BankAccountNo="ngModel"[(ngModel)]="objClaim.ppData.BankAccountNo" placeholder="Bank Account No" class="form-control" required>
+  </div>
+<br>
+
+ 
+<div class="item">
+  <label for="UserId">User Id<span>*</span></label>
+  <i class="fa fa-money-bill" aria-hidden="true" [class.green-icon]="UserId.valid" [class.red-icon]="UserId.invalid && UserId.touched"></i>
+  <input type="number" name="UserId" #UserId="ngModel"[(ngModel)]="objClaim.ppData.UserId" placeholder="User Id" class="form-control" required>
+  </div>
+
+  <br>
+</fieldset>
+<div class="btn-block">
+  <button class="btn btn-primary btn-lg" type="submit">
+    <i class="fa fa-send"></i>Create
+  </button>
+</div>
+
+</form>
+</div>
+  </body>

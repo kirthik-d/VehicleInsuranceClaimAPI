@@ -1,0 +1,28 @@
+<div class="testbox">
+    <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+      
+      <fieldset style="border-radius: 1px; font-size: 30px;">           
+            <div class="item">
+              <div class="name-item">
+                <div class="inputOne">
+                  <label for="Claim">Claim Id<span>*</span></label>
+                  <i aria-hidden="true" [class.green-icon]="ClaimId.valid"
+                [class.red-icon]="ClaimId.invalid && ClaimId.touched"></i>
+                  <input name="Claim" #ClaimId="ngModel" [(ngModel)]="objSrv.ppData.ClaimId" placeholder="Enter you Claim Id" class="form-control" required />
+                </div>
+              </div>
+            </div>
+            <div>
+                <p></p>
+            </div>
+          
+        </fieldset>
+        <br>
+        <div class="btn-block">
+          <button class="btn btn-primary btn-lg" type="submit">
+            <i class="fa fa-check-circle-o"></i>Check status
+        </button>
+      </div>
+      <br>
+      </form>
+    </div>

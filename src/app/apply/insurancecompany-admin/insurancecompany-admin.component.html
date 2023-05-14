@@ -1,0 +1,67 @@
+<body>
+    <div class="textbox">
+        <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+          
+  <fieldset>
+
+    <legend>Insurance company Details</legend>
+  <br>
+  <div class="item">
+    <label for="companyIdentificationNo">company Identification No<span>*</span></label>
+    <i class="fa fa-money-bill" aria-hidden="true" [class.green-icon]="companyIdentificationNo.valid" [class.red-icon]="companyIdentificationNo.invalid && companyIdentificationNo.touched"></i>
+    <input type="number" name="companyIdentificationNo" #companyIdentificationNo="ngModel"[(ngModel)]="objSrv.ppData.companyIdentificationNo" placeholder="company Identification No" class="form-control" required>
+    </div>
+  <br>
+  <div class="item">
+    <label for="companyName">company Name<span>*</span></label>
+    <i class="fa fa-money-bill" aria-hidden="true" [class.green-icon]="companyName.valid" [class.red-icon]="companyName.invalid && companyName.touched"></i>
+    <input name="companyName" #companyName="ngModel"[(ngModel)]="objSrv.ppData.companyName" placeholder="company Name" class="form-control" required>
+    </div>
+  <br>
+  <div class="item">
+    <label for="companyContact">company Contact<span>*</span></label>
+    <i class="fa fa-money-bill" aria-hidden="true" [class.green-icon]="companyContact.valid" [class.red-icon]="companyContact.invalid && companyContact.touched"></i>
+    <input name="companyContact" #companyContact="ngModel"[(ngModel)]="objSrv.ppData.companyContact" placeholder="company Contact" class="form-control" required>
+    </div>
+  <br>
+  <div class="item">
+    <label for="companyAddress">company Address<span>*</span></label>
+    <i class="fa fa-money-bill" aria-hidden="true" [class.green-icon]="companyAddress.valid" [class.red-icon]="companyAddress.invalid && companyAddress.touched"></i>
+    <input name="companyAddress" #companyAddress="ngModel"[(ngModel)]="objSrv.ppData.companyAddress" placeholder="company Address" class="form-control" required>
+    </div>
+  <br>
+ 
+    </fieldset>
+  <div class="btn-block">
+    <button class="btn btn-primary btn-lg" type="submit">
+      <i class="fa fa-send"></i>Create
+    </button>
+  </div>
+ 
+
+  <table class="table table-hover">
+    <thead class="thead-primary">
+        <tr>
+           <th>company Identification No</th> 
+           <th>company Name</th> 
+           <th>company Contact</th> 
+           <th>company Address</th>                         
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of objSrv.ppList">
+            <td (click)="fillForm(p)">{{p.companyIdentificationNo}}</td>
+            <td (click)="fillForm(p)">{{p.companyName}}</td>
+            <td (click)="fillForm(p)">{{p.companyContact}}</td>
+            <td (click)="fillForm(p)">{{p.companyAddress}}</td>               
+                                
+            <td><i class="fa fa-trash" (click)="del(p.companyIdentificationNo)"></i></td> 
+
+        </tr>
+    </tbody>
+    
+</table>
+</form>
+</div>
+</body>
+

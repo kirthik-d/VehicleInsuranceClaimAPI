@@ -1,0 +1,156 @@
+<!-- <div class="outer">
+    <div class="container">
+        <div class="row">
+            <div class="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3">
+                <div class="panel border bg-white">
+                    <div class="panel heading">
+                        <h3 class="pt-3 font-weight-bold text-center">Sign Up</h3>
+                    </div>
+                    <div class="panel body p-3">
+                        <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)" class="p-5">
+                            <input type="hidden" name="Id" [value]="objSrv.ppData.Id">
+                              <div class="form group pt-3">
+                                <div class="input field">
+                                    <span class="fa fa-user p-2"></span>
+                                    <i class="fa fa-user-circle-o" aria-hidden="true" [class.green-icon]="UserNameOrEmail.valid"
+                                    [class.red-icon]="UserNameOrEmail.invalid && UserNameOrEmail.touched"></i>
+                                    <input name="UserNameOrEmail" #UserNameOrEmail="ngModel"[(ngModel)]="objSrv.ppData.UserNameOrEmail" placeholder="UserName Or Email" class="form-control" required>   
+                                </div>
+                            </div>
+                            <!-- <small *ngIf="signUpForm.controls['email'].dirty && signUpForm.hasError('required','email')" class="text-danger">User Name or Email is required</small> -->
+                            
+                            <!-- <div class="form group pt-3">
+                                <div class="input field">
+                                    <span class="fa fa-lock p-2"></span>
+                                    <i class="fa fa-user-circle-o" aria-hidden="true" [class.green-icon]="Password.valid"
+                [class.red-icon]="Password.invalid && Password.touched"></i>
+                                    <input name="Password" #Password="ngModel"[(ngModel)]="objSrv.ppData.Password" placeholder="Password" ng-pattern="ConfirmPass" class="form-control" required>   
+                                    
+                                </div>
+                            </div>
+                            <small *ngIf="signUpForm.controls['password'].dirty && signUpForm.hasError('required','password')" class="text-danger">Password is required</small> -->
+                            <!-- <div class="form group pt-3">
+                                <div class="input field">
+                                    <span class="fa fa-user p-2"></span>
+                                    <i class="fa fa-user-circle-o" aria-hidden="true" [class.green-icon]="Confirm_Password.valid"
+                [class.red-icon]="Confirm_Password.invalid && Confirm_Password.touched" ng-show="registerForm.ConfirmPassword.$error.pattern"></i>
+                                    <input name="ConfirmPassword" #Confirm_Password="ngModel"[(ngModel)]="objSrv.ppData.Confirm_Password" placeholder="Confirm Password" ng-pattern="ConfirmPass" class="form-control" required>   
+                                </div>
+                            </div>
+                            <small *ngIf="signUpForm.controls['userName'].dirty && signUpForm.hasError('required','userName')" ng-show="registerForm.ConfirmPassword.$error.pattern" class="text-danger">Confirm Password is required</small> -->
+                            <!-- <div class="form-group pt-3">
+                                <button class="btn btn-success btn-lg" type="submit" [disabled]="form.invalid">
+                                    <i class="fa fa-database"></i>Sign Up
+                                </button>
+                            </div>
+                            <div class="text-center pt-4 text-muted">Already have account?<a id="forgot" routerLink="/home/login" >Login</a></div>
+                        </form>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ -->  
+
+ 
+ <!DOCTYPE html>
+<!-- Coding by CodingLab | www.codinglabweb.com-->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!--<title> Login and Registration Form in HTML & CSS | CodingLab </title>-->
+
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   <body>
+    <div class="container">
+      <input type="checkbox" id="flip">
+      <div class="cover">
+        <div class="front">
+          <!--<img src="images/frontImg.jpg" alt="">-->
+          <div class="text">
+            <span class="text-1">Every new customer is a <br> new adventure</span>
+            <span class="text-2"><label for="flip">Let's get connected, <u>Sign Up now</u></label></span>
+          </div>
+        </div>
+        <div class="back">
+          <!--<img class="backImg" src="images/backImg.jpg" alt="">-->
+          <div class="text">
+            <span class="text-1">Complete miles of journey <br> with one step</span>
+            <span class="text-2">Let's get started</span>
+          </div>
+        </div>
+      </div>
+      <div class="forms">
+          <div class="form-content">
+            <div class="login-form">
+              <div class="title">Login</div>
+            <form #form="ngForm" autocomplete="off" (click)="onSubmitLogin()">
+              <div class="input-boxes">
+                <div class="input-box">
+                 
+                  <i class="fa fa-user-circle-o" aria-hidden="true" [class.green-icon]="UserName.valid"
+                  [class.red-icon]="UserName.invalid && UserName.touched"></i>
+                  <input name="UserName " #UserName="ngModel"[(ngModel)]="objSrv.ppLogData.UserName" placeholder="UserName Or Email" class="form-control" required> 
+                </div>
+                <div class="input-box">
+                  
+                  <i class="fas fa-lock" [class.green-icon]="Password.valid"
+                  [class.red-icon]="Password.invalid && Password.touched"></i>
+                  <input type="password" name="password " #Password="ngModel"[(ngModel)]="objSrv.ppLogData.Password" placeholder="password" class="form-control" required>  
+                </div>
+                <div class="text"><a routerLink="/">Forgot password?</a></div>
+                <div class="button input-box">
+                  <button  type="submit" class="btn btn-primary btn-block mt-4 w-100">Login</button>
+                </div>
+               
+                <div class="text sign-up-text">Don't have an account? <label for="flip">Signup now</label></div>
+                
+              </div>
+          </form>
+          </div>
+        <div class="signup-form">
+          <div class="title">Signup</div>
+        <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+            <input type="hidden" name="Id" [value]="objSrv.ppData.Id">
+            <div class="input-boxes">
+              <div class="input-box">
+                <i class="fas fa-user" aria-hidden="true" [class.green-icon]= "UserNameOrEmail.valid"
+                [class.red-icon]="UserNameOrEmail.invalid && UserNameOrEmail.touched"></i>
+                <input name="UserNameOrEmail" #UserNameOrEmail="ngModel"[(ngModel)]="objSrv.ppData.UserNameOrEmail" placeholder="Enter your UserName Or Email" class="form-control" required>
+              </div>        
+              </div>
+              <div class="form-group">
+                <div class="input-box">
+                    <i class="fas fa-envelope" aria-hidden="true" [class.green-icon]="Password.valid"
+                    [class.red-icon]="Password.invalid && Password.touched"></i>
+                    <input type="password" name="Password" #Password="ngModel"[(ngModel)]="objSrv.ppData.Password" placeholder="Password" class="form-control" required>
+                  </div>
+              </div>
+            <div class="form-group">
+                <div class="input-box">
+                <i class="fas fa-lock" aria-hidden="true" [class.green-icon]="ConfirmPassword.valid"
+                [class.red-icon]="ConfirmPassword.invalid && ConfirmPassword.touched"></i>
+                <input type="password" name="ConfirmPassword" #ConfirmPassword="ngModel"[(ngModel)]="objSrv.ppData.ConfirmPassword" placeholder="Confirm Password" class="form-control" required>
+                </div>
+            </div>
+            
+              <div class="button input-box">
+                <button class="btn btn-primary btn-block mt-4 w-100" type="submit">
+                     Sign Up
+                </button>
+              </div>
+              <div class="text sign-up-text">Already have an account? <label for="flip">Login now</label></div>  
+      </form>
+    </div>
+    </div>
+    </div>
+  </div>
+</body>
+ </html>
+
+ 

@@ -1,0 +1,83 @@
+<body>
+    <div class="textbox">
+        <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+          
+  <fieldset>
+
+    <legend>Policy Details</legend>
+  <br>
+  <div class="item">
+    <label for="PolicyId">Policy Id<span>*</span></label>
+    <i class="fa fa-money-bill" aria-hidden="true" [class.green-icon]="PolicyId.valid" [class.red-icon]="PolicyId.invalid && PolicyId.touched"></i>
+    <input type="number" name="PolicyId" #PolicyId="ngModel"[(ngModel)]="objSrv.ppData.PolicyId" placeholder="Policy Id" class="form-control" required>
+    </div>
+  <br>
+  <div class="item">
+    <label for="VehicleId">Vehicle Id<span>*</span></label>
+    <i class="fa fa-money-bill" aria-hidden="true" [class.green-icon]="VehicleId.valid" [class.red-icon]="VehicleId.invalid && VehicleId.touched"></i>
+    <input type="number" name="VehicleId" #VehicleId="ngModel"[(ngModel)]="objSrv.ppData.VehicleId" placeholder="Vehicle Id" class="form-control" required>
+    </div>
+  <br>
+  <div class="item">
+    <label for="PolicyName">Policy Name<span>*</span></label>
+    <i class="fa fa-money-bill" aria-hidden="true" [class.green-icon]="PolicyName.valid" [class.red-icon]="PolicyName.invalid && PolicyName.touched"></i>
+    <input name="PolicyName" #PolicyName="ngModel"[(ngModel)]="objSrv.ppData.PolicyName" placeholder="Policy Name" class="form-control" required>
+    </div>
+  <br>
+  <div class="item">
+    <label for="EffectiveDate">Effective Date<span>*</span></label>
+    <i class="fa fa-money-bill" aria-hidden="true" [class.green-icon]="EffectiveDate.valid" [class.red-icon]="EffectiveDate.invalid && EffectiveDate.touched"></i>
+    <input type="date" name="EffectiveDate" #EffectiveDate="ngModel"[(ngModel)]="objSrv.ppData.EffectiveDate" placeholder="Effective Date" class="form-control" required>
+    </div>
+  <br>
+  <div class="item">
+    <label for="ExpiryDate">Expiry Date<span>*</span></label>
+    <i class="fa fa-money-bill" aria-hidden="true" [class.green-icon]="ExpiryDate.valid" [class.red-icon]="ExpiryDate.invalid && ExpiryDate.touched"></i>
+    <input type="date" name="ExpiryDate" #ExpiryDate="ngModel"[(ngModel)]="objSrv.ppData.ExpiryDate" placeholder="Applicant Id" class="form-control" required>
+    </div>
+    <br>
+  <div class="item">
+    <label for="CompanyId">Company Id<span>*</span></label>
+    <i class="fa fa-money-bill" aria-hidden="true" [class.green-icon]="CompanyId.valid" [class.red-icon]="CompanyId.invalid && CompanyId.touched"></i>
+    <input type="number" name="CompanyId" #CompanyId="ngModel"[(ngModel)]="objSrv.ppData.CompanyId" placeholder="Applicant Id" class="form-control" required>
+    </div>
+
+    <br>
+  </fieldset>
+  <div class="btn-block">
+    <button class="btn btn-primary btn-lg" type="submit">
+      <i class="fa fa-send"></i>Create
+    </button>
+  </div>
+ 
+
+  <table class="table table-hover">
+    <thead class="thead-primary">
+        <tr>
+           <th>Policy Id</th> 
+           <th>Vehicle Id</th> 
+           <th>Policy Name</th> 
+           <th>Effective Date</th> 
+           <th>Expiry Date</th> 
+           <th>Company Id</th>                              
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of objSrv.ppList">
+            <td (click)="fillForm(p)">{{p.PolicyId}}</td>
+            <td (click)="fillForm(p)">{{p.VehicleId}}</td>
+            <td (click)="fillForm(p)">{{p.PolicyName}}</td>
+            <td (click)="fillForm(p)">{{p.EffectiveDate}}</td>  
+            <td (click)="fillForm(p)">{{p.ExpiryDate}}</td>   
+            <td (click)="fillForm(p)">{{p.CompanyId}}</td>            
+         
+                                
+            <td><i class="fa fa-trash" (click)="del(p.PolicyId)"></i></td> 
+
+        </tr>
+    </tbody>
+    
+</table>
+</form>
+</div>
+</body>

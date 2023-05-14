@@ -1,0 +1,58 @@
+<nav class="navbar navbar-expand-lg ">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/"></a>
+    <img src="https://doctorins.com/wp-content/uploads/2017/12/auto-insurance-banner.jpg" class="center">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active text-black" aria-current="page" routerLink="">Home</a>
+        
+     
+          <a class="nav-link text-black" routerLink="/dashboard">Dashboard</a>
+          <!-- <a class="nav-link text-black" routerLink="/conAdmin">Contact Admin</a> localStorage.clear();
+     -->
+       <a class="nav-link text-black" routerLink="/apply">Apply Now</a>
+       <a class="nav-link text-black" routerLink="/companies">Insurance Companies</a>
+       
+        
+       
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-black" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            More
+          </a>
+          <ul class="dropdown-menu">
+            <li> <a class="dropdown-item" routerLink="/status">Check Status</a></li>  
+            <li><a class="dropdown-item" routerLink="/aboutus">About Us</a></li>
+            <li><a class="dropdown-item" routerLink="/contact">Contact Us</a></li>
+            <li><a class="dropdown-item" routerLink="/service">Services</a></li>
+            
+          </ul>
+        </li>
+         
+        
+ 
+        
+         
+       <!-- <li class="nav-item">
+        
+          <div *ngIf="isUserLoggedIn; else isLogOut">
+                <a class="nav-link" routerLink="/logout">Login</a>
+          </div>
+
+          <ng-template #isLogOut>
+              <a class="nav-link" routerLink="/home/register">Logout</a>
+          </ng-template>
+       </li>   -->
+       
+      </div>
+      <div class="navbar-nav topnav-right">
+         
+        <a class="nav-link text-black" routerLink="home/register"> Login</a>
+        <a class="nav-link text-black" routerLink="/logout">Logout</a>
+      </div>
+       
+    </div>
+  </div>
+</nav>

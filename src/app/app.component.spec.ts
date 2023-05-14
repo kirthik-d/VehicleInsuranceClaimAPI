@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'VICMFrontEnd'`, () => {
+  it(`should have as title 'routingEx'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('VICMFrontEnd');
+    expect(app.title).toEqual('routingEx');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('VICMFrontEnd app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('routingEx app is running!');
   });
 });

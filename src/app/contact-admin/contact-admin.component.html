@@ -1,0 +1,75 @@
+<body>
+    <br>
+<h1 class="text-center">View Feedbacks</h1>
+<div class="contactForm">
+    <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+        <input type="hidden" name="Id" [value]="objService.ppData.Id">
+        
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="fa fa-user-circle-o" aria-hidden="true" [class.green-icon]="FullName.valid"
+                        [class.red-icon]="FullName.invalid && FullName.touched"></i>
+                    <input name="FullName" #FullName="ngModel" [(ngModel)]="objService.ppData.FullName"
+                        placeholder="Full Name" class="form-control" required>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div clas="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="fa fa-envelope" aria-hidden="true" [class.green-icon]="Email.valid" [class.red-icon]="Email.invalid && Email.touched"></i>
+                    <input name="Email" #Email="ngModel" [(ngModel)]="objService.ppData.Email" placeholder="Email" class="form-control" required maxlength="20" minlength="10">    
+                </div> 
+            </div>
+        </div>
+    </div>
+
+  
+    
+    <div clas="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="fa fa-comment" aria-hidden="true" [class.green-icon]="Message.valid"
+                    [class.red-icon]="Message.invalid && Message.touched"></i>
+                    <input name="Message" #Message="ngModel"   [(ngModel)]="objService.ppData.Message" placeholder="Message" class="form-control" required maxlength="200" minlength="10">    
+                </div> 
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-success btn-lg" type="submit" >
+            <i class="fa fa-send-o"></i> Send
+        </button>
+    </div>
+    </form>
+</div>
+<br>
+<table class="table table-hover">
+    <thead class="thead-primary">
+        <tr>
+            <th>Id</th>             
+            <th>Full Name</th>
+            <th>Email</th> 
+            <th>Message</th> 
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of objService.ppList">
+            <td (click)="fillForm(p)">{{p.Id}}</td>            
+            <td (click)="fillForm(p)">{{p.FullName}}</td>
+            <td (click)="fillForm(p)">{{p.Email}}</td>
+            <td (click)="fillForm(p)">{{p.Message}}</td>            
+            <td><i class="fa fa-trash" (click)="del(p.Id)"></i></td> 
+
+        </tr>
+    </tbody>
+    
+</table>
+</body>
+

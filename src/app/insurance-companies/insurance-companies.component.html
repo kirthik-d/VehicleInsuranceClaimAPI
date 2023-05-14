@@ -1,0 +1,34 @@
+<div class="banner">
+    <h1>Insurance Companies</h1>
+  </div>
+  
+  
+<div style="padding-top: 25px;">
+
+    <table class="table table-hover">
+        <thead class="thead-primary">
+            <tr>
+               <th>company Identification No</th> 
+               <th>company Name</th> 
+               <th>company Contact</th> 
+               <th>company Address</th>                         
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of objSrv.ppList">
+                <td>{{p.companyIdentificationNo}}</td>
+                <td>{{p.companyName}}</td>
+                <td>{{p.companyContact}}</td>
+                <td>{{p.companyAddress}}</td>      
+             
+                                    
+                <td><i class="fa fa-trash"></i></td> 
+    
+            </tr>
+        </tbody>
+        
+    </table>
+     
+</div>
+    
+ 

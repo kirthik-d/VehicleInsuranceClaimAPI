@@ -1,0 +1,143 @@
+
+<body>
+  <div class="testbox">
+    <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+    <fieldset>
+    <legend>Vehicle Information</legend>
+    <br>
+    <div class="item">
+      <label for="VehicleNo">Vehicle No<span>*</span></label>
+      <i class="fa fa-money" aria-hidden="true" [class.green-icon]="VehicleNo.valid" [class.red-icon]="VehicleNo.invalid && VehicleNo.touched"></i>
+      <input type="number" #VehicleNo="ngModel"[(ngModel)]="propSrv.ppData.VehicleNo" placeholder="VehicleNo" class="form-control" required>
+      </div>
+      <br>
+    <div class="item">
+    <label for="VehicleName">Vehicle Name<span>*</span></label>
+    <i class="fa fa-money" aria-hidden="true" [class.green-icon]="VehicleName.valid" [class.red-icon]="VehicleName.invalid && VehicleName.touched"></i>
+    <input name="VehicleName" #VehicleName="ngModel"[(ngModel)]="propSrv.ppData.VehicleName" placeholder="VehicleName" class="form-control" required>
+    </div>
+    <br>
+    <div class="item">
+      <label for="VehicleType">Vehicle Type <span>*</span></label>
+      <i class="fa fa-money" aria-hidden="true" [class.green-icon]="VehicleType.valid" [class.red-icon]="VehicleType.invalid && VehicleType.touched"></i>
+      <input name="VehicleType" #VehicleType="ngModel"[(ngModel)]="propSrv.ppData.VehicleType" placeholder="VehicleType" class="form-control" required>
+      </div>
+    <br>
+    <div class="item">
+    <label for="Vehicle Model Maker">Vehicle Model Maker<span>*</span></label>
+    <i class="fa fa-calendar-alt" aria-hidden="true" [class.green-icon]="VehicleModelMaker.valid" [class.red-icon]="VehicleModelMaker.invalid && VehicleModelMaker.touched"></i>
+    <input name="VehicleModelMaker" #VehicleModelMaker ="ngModel"[(ngModel)]="propSrv.ppData.VehicleModelMaker" placeholder="VehicleModelMaker" class="form-control" required>
+    </div>
+    <br>
+    <div class="item">
+      <label for="GrossVehicleWeight">Gross Vehicle Weight <span>*</span></label>
+      <i class="fa fa-calendar-alt" aria-hidden="true" [class.green-icon]="GrossVehicleWeight.valid" [class.red-icon]="GrossVehicleWeight.invalid && GrossVehicleWeight.touched"></i>
+      <input name="#GrossVehicleWeight " #GrossVehicleWeight ="ngModel"[(ngModel)]="propSrv.ppData.GrossVehicleWeight" placeholder="Gross Vehicle Weight " class="form-control" required>
+      </div>
+    <br>
+    <div class="item">
+      <label for="VehiclePower">Vehicle Power <span>*</span></label>
+      <i class="fa fa-calendar-alt" aria-hidden="true" [class.green-icon]="VehiclePower.valid" [class.red-icon]="VehiclePower.invalid && VehiclePower.touched"></i>
+      <input name="#VehiclePower " #VehiclePower ="ngModel"[(ngModel)]="propSrv.ppData.GrossVehicleWeight" placeholder="VehiclePower " class="form-control" required>
+      </div>
+    <br>
+    <div class="item">
+      <label for="VehicleCapacity">Vehicle Capacity <span>*</span></label>
+      <i class="fa fa-calendar-alt" aria-hidden="true" [class.green-icon]="VehicleCapacity.valid" [class.red-icon]="VehicleCapacity.invalid && VehicleCapacity.touched"></i>
+      <input name="#VehicleCapacity" #VehicleCapacity ="ngModel"[(ngModel)]="propSrv.ppData.GrossVehicleWeight" placeholder="VehicleCapacity" class="form-control" required>
+      </div>
+    <br>
+    <div class="item">
+      <label for="VehicleLength">Vehicle Length  <span>*</span></label>
+      <i class="fa fa-calendar-alt" aria-hidden="true" [class.green-icon]="VehicleLength.valid" [class.red-icon]="VehicleLength.invalid && VehicleLength.touched"></i>
+      <input name="#VehicleLength " #VehicleLength ="ngModel"[(ngModel)]="propSrv.ppData.GrossVehicleWeight" placeholder="Vehicle Length" class="form-control" required>
+      </div>
+    <br>
+    <div class="item">
+      <label for="VehicleOwner">VehicleOwner <span>*</span></label>
+      <i class="fa fa-calendar-alt" aria-hidden="true" [class.green-icon]="VehicleOwner.valid" [class.red-icon]="VehicleOwner.invalid && VehicleOwner.touched"></i>
+      <input name="#VehicleOwner " #VehicleOwner ="ngModel"[(ngModel)]="propSrv.ppData.VehicleOwner" placeholder="VehicleOwner " class="form-control" required>
+      </div>
+    <br> 
+    <div class="item">
+      <label for="VehicleEngineNo">Vehicle Engine No<span>*</span></label>
+      <i class="fa fa-calendar-alt" aria-hidden="true" [class.green-icon]="VehicleEngineNo.valid" [class.red-icon]="VehicleEngineNo.invalid && VehicleEngineNo.touched"></i>
+      <input name="#VehicleEngineNo" #VehicleEngineNo ="ngModel"[(ngModel)]="propSrv.ppData.VehicleEngineNo" placeholder="VehicleEngineNo" class="form-control" required>
+      </div>
+    <br>
+    <div class="item">
+      <label for="FuelType">FuelType <span>*</span></label>
+      <i class="fa fa-calendar-alt" aria-hidden="true" [class.green-icon]="FuelType.valid" [class.red-icon]="FuelType.invalid && FuelType.touched"></i>
+      <input name="#FuelType " #FuelType ="ngModel"[(ngModel)]="propSrv.ppData.FuelType" placeholder="FuelType" class="form-control" required>
+      </div>
+    <br>
+    <div class="item">
+      <label for="VehicleCompany">Vehicle Company <span>*</span></label>
+      <i class="fa fa-calendar-alt" aria-hidden="true" [class.green-icon]="VehicleCompany.valid" [class.red-icon]="VehicleCompany.invalid && VehicleCompany.touched"></i>
+      <input name="#VehicleCompany" #VehicleCompany ="ngModel"[(ngModel)]="propSrv.ppData.VehicleCompany" placeholder="Vehicle Company" class="form-control" required>
+      </div>
+    <br>
+    <div class="item">
+      <label for="OwnerId">OwnerId  <span>*</span></label>
+      <i class="fa fa-calendar-alt" aria-hidden="true" [class.green-icon]="OwnerId.valid" [class.red-icon]="OwnerId.invalid && OwnerId.touched"></i>
+      <input type="number" name="#OwnerId " #OwnerId ="ngModel"[(ngModel)]="propSrv.ppData.OwnerId" placeholder="Owner Id" class="form-control" required>
+      </div>
+    <br>
+  </fieldset>
+  <div class="btn-block">
+    <button class="btn btn-primary btn-lg" type="submit">
+      <i class="fa fa-check-circle-o"></i>Save and Continue
+    </button>
+  </div>
+  </form> 
+</div>
+<br> 
+ 
+
+<table class="table table-hover">
+  <thead class="thead-primary">
+      <tr>
+         <th>Vehicle No</th> 
+          <th>Vehicle Name</th>  
+          <th>Vehicle Type</th>  
+          <th>Vehicle Model Maker</th>  
+          <th>Gross Vehicle Weight</th>  
+          <th>Vehicle Power</th>  
+          <th>Vehicle Capacity</th>  
+          <th>Vehicle Length</th>  
+          <th>Vehicle Owner</th>  
+          <th>Vehicle Engine No</th>  
+          <th>FuelType</th>  
+          <th>Vehicle Company</th>  
+          <th>Owner Id</th>
+                            
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let p of propSrv.ppList">
+          <td (click)="fillForm(p)">{{p.VehicleNo}}</td>
+          <td (click)="fillForm(p)">{{p.VehicleName}}</td>
+          <td (click)="fillForm(p)">{{p.VehicleType}}</td>
+          <td (click)="fillForm(p)">{{p.VehicleModelMaker}}</td>  
+          <td (click)="fillForm(p)">{{p.GrossVehicleWeight}}</td>  
+          <td (click)="fillForm(p)">{{p.VehiclePower}}</td>
+          <td (click)="fillForm(p)">{{p.VehicleCapacity}}</td>
+          <td (click)="fillForm(p)">{{p.VehicleLength}}</td>
+          <td (click)="fillForm(p)">{{p.VehicleOwner}}</td>  
+          <td (click)="fillForm(p)">{{p.VehicleEngineNo}}</td> 
+          <td (click)="fillForm(p)">{{p.FuelType}}</td> 
+          <td (click)="fillForm(p)">{{p.VehicleCompany}}</td> 
+          <td (click)="fillForm(p)">{{p.OwnerId}}</td> 
+        
+                              
+          <td><i class="fa fa-trash" (click)="del(p.VehicleNo)"></i></td> 
+
+      </tr>
+  </tbody>
+  
+</table>
+ 
+   
+</body>
+
+

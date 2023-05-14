@@ -1,0 +1,125 @@
+<body>
+    <div class="textbox">
+        <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+          
+  <fieldset>
+
+    <legend>Claim Information</legend>
+  <br>
+  <div class="item">
+    <label for="ClaimId">Claim Id<span>*</span></label>
+    <i class="fa fa-money-bill" aria-hidden="true" [class.green-icon]="ClaimId.valid" [class.red-icon]="ClaimId.invalid && ClaimId.touched"></i>
+    <input type="number" name="ClaimId" #ClaimId="ngModel"[(ngModel)]="objSrv.ppData.ClaimId" placeholder="Claim Id" class="form-control" required>
+    </div>
+  <br>
+  <div class="item">
+    <label for="PolicyId">Policy Id<span>*</span></label>
+    <i class="fa fa-money-bill" aria-hidden="true" [class.green-icon]="PolicyId.valid" [class.red-icon]="PolicyId.invalid && PolicyId.touched"></i>
+    <input type="number" name="PolicyId" #PolicyId="ngModel"[(ngModel)]="objSrv.ppData.PolicyId" placeholder="Policy Id" class="form-control" required>
+    </div>
+  <br>
+  <div class="item">
+    <label for="VehicleBill">Vehicle Bill <span>*</span></label>
+    <i class="fa fa-money-bill" aria-hidden="true" [class.green-icon]="VehicleBill.valid" [class.red-icon]="VehicleBill.invalid && VehicleBill.touched"></i>
+    <input name="VehicleBill" #VehicleBill="ngModel"[(ngModel)]="objSrv.ppData.VehicleBill" placeholder="Vehicle Bill" class="form-control" required>
+    </div>
+    <br>
+    <div class="item">
+      <label for="DriverLicenceNo">Driver Licence No<span>*</span></label>
+      <i class="fa fa-money-bill" aria-hidden="true" [class.green-icon]="DriverLicenceNo.valid" [class.red-icon]="DriverLicenceNo.invalid && DriverLicenceNo.touched"></i>
+      <input name="DriverLicenceNo" #DriverLicenceNo="ngModel"[(ngModel)]="objSrv.ppData.DriverLicenceNo" placeholder="Driver Licence No" class="form-control" required>
+      </div>
+  <br>
+  <div class="item">
+    <label for="VehicleCondition">Vehicle Condition<span>*</span></label>
+    <i class="fa fa-money-bill" aria-hidden="true" [class.green-icon]="VehicleCondition.valid" [class.red-icon]="VehicleCondition.invalid && VehicleCondition.touched"></i>
+    <input name="VehicleCondition" #VehicleCondition="ngModel"[(ngModel)]="objSrv.ppData.VehicleCondition" placeholder="Vehicle Condition" class="form-control" required>
+    </div>
+<br>
+<div class="item">
+    <label for="ClaimStatus">Claim Status<span>*</span></label>
+    <i class="fa fa-money-bill" aria-hidden="true" [class.green-icon]="ClaimStatus.valid" [class.red-icon]="ClaimStatus.invalid && ClaimStatus.touched"></i>
+    <input name="ClaimStatus" #ClaimStatus="ngModel"[(ngModel)]="objSrv.ppData.ClaimStatus" placeholder="Claim Status" class="form-control" required>
+    </div>
+<br>
+<div class="item">
+    <label for="BankName">Bank Name<span>*</span></label>
+    <i class="fa fa-money-bill" aria-hidden="true" [class.green-icon]="BankName.valid" [class.red-icon]="BankName.invalid && BankName.touched"></i>
+    <input name="BankName" #BankName="ngModel"[(ngModel)]="objSrv.ppData.BankName" placeholder="Bank Name" class="form-control" required>
+    </div>
+<br>
+<div class="item">
+    <label for="BankBranch">Bank Branch<span>*</span></label>
+    <i class="fa fa-money-bill" aria-hidden="true" [class.green-icon]="BankBranch.valid" [class.red-icon]="BankBranch.invalid && BankBranch.touched"></i>
+    <input name="BankBranch" #BankBranch="ngModel"[(ngModel)]="objSrv.ppData.BankBranch" placeholder="Bank Branch" class="form-control" required>
+    </div>
+<br>
+<div class="item">
+    <label for="BankIfscCode">Bank Ifsc Code<span>*</span></label>
+    <i class="fa fa-money-bill" aria-hidden="true" [class.green-icon]="BankIfscCode.valid" [class.red-icon]="BankIfscCode.invalid && BankIfscCode.touched"></i>
+    <input name="BankIfscCode" #BankIfscCode="ngModel"[(ngModel)]="objSrv.ppData.BankIfscCode" placeholder="BankIfscCode" class="form-control" required>
+    </div>
+<br>
+<div class="item">
+    <label for="BankAccountNo">Bank Account No<span>*</span></label>
+    <i class="fa fa-money-bill" aria-hidden="true" [class.green-icon]="BankAccountNo.valid" [class.red-icon]="BankAccountNo.invalid && BankAccountNo.touched"></i>
+    <input name="BankAccountNo" #BankAccountNo="ngModel"[(ngModel)]="objSrv.ppData.BankAccountNo" placeholder="BankAccountNo" class="form-control" required>
+    </div>
+<br>
+ 
+   
+  <div class="item">
+    <label for="UserId">User Id<span>*</span></label>
+    <i class="fa fa-money-bill" aria-hidden="true" [class.green-icon]="UserId.valid" [class.red-icon]="UserId.invalid && UserId.touched"></i>
+    <input type="number" name="UserId" #UserId="ngModel"[(ngModel)]="objSrv.ppData.UserId" placeholder="User Id" class="form-control" required>
+    </div>
+
+    <br>
+  </fieldset>
+  <div class="btn-block">
+    <button class="btn btn-primary btn-lg" type="submit">
+      <i class="fa fa-send"></i>Create
+    </button>
+  </div>
+ 
+
+  <table class="table table-hover">
+    <thead class="thead-primary">
+        <tr>
+           <th>Claim Id</th> 
+           <th>Policy Id</th> 
+           <th>Vehicle Bill</th> 
+           <th>Driver Licence No</th> 
+           <th>Vehicle Condition</th> 
+           <th>Claim Status</th> 
+           <th>Bank Name</th> 
+           <th>Bank Branch</th> 
+           <th>Bank Ifsc Code</th> 
+           <th>Bank Account No</th> 
+           <th>User Id</th>                                
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of objSrv.ppList">
+            <td (click)="fillForm(p)">{{p.ClaimId}}</td>
+            <td (click)="fillForm(p)">{{p.PolicyId}}</td>
+            <td (click)="fillForm(p)">{{p.VehicleBill}}</td>
+            <td (click)="fillForm(p)">{{p.DriverLicenceNo}}</td>
+            <td (click)="fillForm(p)">{{p.VehicleCondition}}</td>
+            <td (click)="fillForm(p)">{{p.ClaimStatus}}</td>
+            <td (click)="fillForm(p)">{{p.BankName}}</td>  
+            <td (click)="fillForm(p)">{{p.BankBranch}}</td>   
+            <td (click)="fillForm(p)">{{p.BankIfscCode}}</td>            
+            <td (click)="fillForm(p)">{{p.BankAccountNo}}</td>            
+            <td (click)="fillForm(p)">{{p.UserId}}</td>            
+         
+                                
+            <td><i class="fa fa-trash" (click)="del(p.ClaimId)"></i></td> 
+
+        </tr>
+    </tbody>
+    
+</table>
+</form>
+</div>
+</body>
